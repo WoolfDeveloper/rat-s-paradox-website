@@ -84,3 +84,22 @@ body {
   margin: 0;
   min-width: 320px;
 }
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+
+  .header-title {
+    font-family: doodly_dialect;
+    font-size: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
