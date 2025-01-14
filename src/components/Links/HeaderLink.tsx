@@ -4,7 +4,7 @@ const HeaderLink = ({ children, href }: { children: React.ReactNode, href: strin
 	const navigate = useNavigate();
 
 	return (
-		<a className="text-primary cursor-pointer transition-all duration-100 ease-in-out hover:text-secondary hover:font-bold"
+		<a className="text-primary cursor-pointer transition-all duration-100 ease-in-out hover:text-secondary font-whacky"
 			onClick={() => navigate(href)}
 		>
 			{children}
