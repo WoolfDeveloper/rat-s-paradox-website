@@ -1,3 +1,4 @@
+import LanguageSwitcher from "../components/LangSwitcher/LangSwitch"
 import HeaderLink from "../components/Links/HeaderLink"
 
 export interface DefaultLayoutProps {
@@ -10,6 +11,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
 			<div className="header-container">
 				<div className="header-title">Rat's Paradox</div>
 				<div className="flex flex-row gap-4">
+					<LanguageSwitcher />
 					<HeaderLink href="/">Home</HeaderLink>
 					<HeaderLink href="/about">About</HeaderLink>
 					<HeaderLink href="/blog">Blog</HeaderLink>
