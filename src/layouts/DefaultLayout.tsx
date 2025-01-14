@@ -1,5 +1,4 @@
-import LanguageSwitcher from "../components/LangSwitcher/LangSwitch"
-import HeaderLink from "../components/Links/HeaderLink"
+import HeaderBar from "../components/HeaderBar/HeaderBar"
 
 export interface DefaultLayoutProps {
 	children: React.ReactNode
@@ -8,15 +7,7 @@ export interface DefaultLayoutProps {
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
 	return (
 		<>
-			<div className="header-container">
-				<div className="header-title">Rat's Paradox</div>
-				<div className="flex flex-row gap-4">
-					<LanguageSwitcher />
-					<HeaderLink href="/">Home</HeaderLink>
-					<HeaderLink href="/about">About</HeaderLink>
-					<HeaderLink href="/blog">Blog</HeaderLink>
-				</div>
-			</div>
+			<HeaderBar />
 			<div className="page-content">
 				{children}
 			</div>
