@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
 	return (
 		<>
 			<HeaderBar />
-			<div className="page-content">
+			<div className="page-content mt-4 ">
 				{children}
 			</div>
 		</>

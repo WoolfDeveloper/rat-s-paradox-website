@@ -7,20 +7,26 @@ export interface ILink {
 
 export const headerLinks: ILink[] = [
     {
-        name: 'Home',
+        name: 'home',
         path: '/',
         enabled: true,
         external: false,
     },
     {
-        name: 'About',
+        name: 'about',
         path: '/about',
         enabled: true,
         external: false,
     },
     {
-        name: 'Blog',
-        path: '/blog',
+        name: 'games',
+        path: '/games',
+        enabled: true,
+        external: false,
+    },
+    {
+        name: 'contact',
+        path: '/contact',
         enabled: true,
         external: false,
     }

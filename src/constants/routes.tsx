@@ -1,4 +1,5 @@
 import DefaultLayout from "../layouts/DefaultLayout";
+import AboutPage from "../pages/AboutPage/AboutPage";
 import LandingPage from "../pages/LandingPage";
 
 export interface IRoute {
@@ -19,4 +20,14 @@ export const ROUTES: IRoute[] = [
             </DefaultLayout>
         )
     },
+    {
+        name: 'About',
+        path: '/about',
+        enabled: true,
+        component: () => (
+            <DefaultLayout>
+                <AboutPage />
+            </DefaultLayout>
+        )
+    }
 ]
