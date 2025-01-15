@@ -1,0 +1,20 @@
+{
+    "title": "Rat's Paradox",
+    "navMenu": {
+        "home": "Inicio",
+        "about": "Acerca del estudio",
+        "games": "Juegos",
+        "contact": "Contacto"
+    },
+    "about": {
+        "title": "Acerca del estudio"
+    },
+    "notFound": {
+        "title": "404",
+        "description": "La página que estás buscando no existe",
+        "back": "Volver al inicio"
+    },
+    "landing" : {
+        "title": "Página principal"
+    }
+}

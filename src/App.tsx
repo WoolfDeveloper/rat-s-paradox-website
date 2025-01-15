@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
 import { ROUTES } from './constants/routes'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 const AppContent = () => {
   return (
@@ -8,7 +8,7 @@ const AppContent = () => {
       {ROUTES.map((route, index) => route.enabled && (
         <Route key={index} path={route.path} element={route.component()} />
       ))}
-      <Route path="*" element={<h1>404</h1>} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
