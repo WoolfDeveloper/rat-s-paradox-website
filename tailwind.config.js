@@ -15,6 +15,7 @@ export default {
       }
     },
     fontFamily: {
+      primary: ['ibm_plex_mono'],
       doodly: ['doodly_dialect'],
       "empty-w": ['empty_windows'],
       "fipps-r": ['fipps_regular'],
@@ -24,6 +25,12 @@ export default {
       "retro-future": ['retro_future'],
       "tomorrow-n": ['tomorrow_night'],
       whacky: ['whacky_joe'],
+      kodemono: ['kodemono'],
+      doto: ['doto'],
+      "ubuntu-mono": ['ubuntu_mono'],
+      "ubuntu-sans-mono": ['ubuntu_sans_mono'],
+      metalmania: ['metalmania'],
+      ibmplex: ['ibm_plex_mono'],
     }
   },
   plugins: [],
