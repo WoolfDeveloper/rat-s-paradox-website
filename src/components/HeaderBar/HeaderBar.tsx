@@ -7,7 +7,13 @@ import { ThemeToggle } from "../ThemeToggle/ThemeToggle"
 
 const HeaderBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
     const { t } = useTranslation()
+
+    const enabledLinks = headerLinks.filter(link => link.enabled)
+    const visibleLinks = enabledLinks.slice(0, 4)
+    const moreLinks = enabledLinks.slice(4)
+    const hasMoreLinks = moreLinks.length > 0
 
     return (
         <div className="sticky top-0 z-10 flex justify-between items-center p-4 bg-background dark:bg-background-dark text-black dark:text-white border-b-4 border-b-primary dark:border-b-primary-dark">
@@ -15,9 +21,38 @@ const HeaderBar = () => {
             
             <nav className="hidden md:flex flex-row items-center gap-4">
                 <ThemeToggle />
-                {headerLinks.map((link, index) => link.enabled && (
+                {visibleLinks.map((link, index) => (
                     <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
                 ))}
+                
+                {hasMoreLinks && (
+                    <div className="relative">
+                        <button 
+                            onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
+                            className="flex items-center gap-1"
+                        >
+                            <div className="relative text-[1rem]">
+                                <span className={`absolute transition-opacity duration-300 ${isMoreMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
+                                    [-]
+                                </span>
+                                <span className={`transition-opacity duration-300 ${isMoreMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
+                                    [+]
+                                </span>
+                            </div>
+                        </button>
+                        
+                        <div className={`absolute top-full right-0 z-20
+                            transform transition-all duration-300 ease-in-out
+                            ${isMoreMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[-10px] pointer-events-none'}
+                        `}>
+                            <nav className="flex flex-col items-end gap-1 p-4 bg-background dark:bg-background-dark shadow-lg">
+                                {moreLinks.map((link, index) => (
+                                    <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
+                                ))}
+                            </nav>
+                        </div>
+                    </div>
+                )}
                 <LanguageSwitcher />
             </nav>
 
@@ -38,7 +73,7 @@ const HeaderBar = () => {
             `}>
                 <div className="flex justify-end">
                     <nav className="inline-flex flex-col items-end justify-center gap-1 p-4 ml-auto bg-background dark:bg-background-dark">
-                        {headerLinks.map((link, index) => link.enabled && (
+                        {enabledLinks.map((link, index) => (
                             <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
                         ))}
                         <LanguageSwitcher />
