@@ -1,8 +1,12 @@
-
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   return (
     <div className='flex flex-row gap-4'>
