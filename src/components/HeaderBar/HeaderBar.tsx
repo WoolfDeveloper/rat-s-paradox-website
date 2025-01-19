@@ -13,13 +13,13 @@ const HeaderBar = () => {
         <div className="sticky top-0 z-10 flex justify-between items-center p-4 bg-background dark:bg-background-dark text-black dark:text-white border-b-4 border-b-primary dark:border-b-primary-dark">
             <div className="font-doodly text-[1rem] uppercase">Rat's Paradox</div>
             
-            <div className="hidden md:flex flex-row items-center gap-4">
+            <nav className="hidden md:flex flex-row items-center gap-4">
                 <ThemeToggle />
                 {headerLinks.map((link, index) => link.enabled && (
                     <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
                 ))}
                 <LanguageSwitcher />
-            </div>
+            </nav>
 
             <div className="md:hidden flex items-center gap-2">
                 <ThemeToggle />
@@ -32,15 +32,17 @@ const HeaderBar = () => {
                 </button>
             </div>
 
-            <div className={`md:hidden absolute top-16 right-0 left-0 z-10
+            <div className={`md:hidden absolute top-[76px] right-0 left-0 z-10
                 transform transition-all duration-300 ease-in-out
                 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}
             `}>
-                <div className="flex flex-col items-end justify-center gap-1 p-4">
-                    {headerLinks.map((link, index) => link.enabled && (
-                        <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
-                    ))}
-                    <LanguageSwitcher />
+                <div className="flex justify-end">
+                    <nav className="inline-flex flex-col items-end justify-center gap-1 p-4 ml-auto bg-background dark:bg-background-dark">
+                        {headerLinks.map((link, index) => link.enabled && (
+                            <HeaderLink href={link.path} key={index}>{t(`navMenu.${link.name}`)}</HeaderLink>
+                        ))}
+                        <LanguageSwitcher />
+                    </nav>
                 </div>
             </div>
         </div>
