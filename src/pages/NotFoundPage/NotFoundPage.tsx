@@ -2,10 +2,12 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
+import { useTheme } from "../../context/ThemeContext";
 
 const NotFoundPage = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const { theme } = useTheme();
     const sceneRef = useRef<HTMLDivElement>(null);
     const engineRef = useRef<Matter.Engine | null>(null);
     const requestRef = useRef<number>();
@@ -103,7 +105,7 @@ const NotFoundPage = () => {
             context.textAlign = 'center';
             context.textBaseline = 'middle';
             context.font = 'bold 72px jetbrains_mono';
-            context.fillStyle = '#FFF';
+            theme === 'dark' ? context.fillStyle = '#FFF' : context.fillStyle = '#000';
             context.fillText('404', 0, 0);
             context.restore();
 
@@ -169,11 +171,11 @@ const NotFoundPage = () => {
                 ref={sceneRef} 
                 className="w-full max-w-2xl h-[400px] mb-4"
             />
-            <div className="font-whacky text-md text-center">
+            <div className="font-whacky text-md text-center text-black dark:text-white">
                 {t('notFound.description')}
             </div>
             <a 
-                className="text-primary font-whacky text-md cursor-pointer transition-all duration-100 ease-in-out hover:text-secondary"
+                className="text-primary dark:text-primary-dark font-whacky text-md cursor-pointer transition-all duration-100 ease-in-out hover:text-secondary dark:hover:text-secondary-dark"
                 onClick={() => navigate('/')}
             > 
                 {t('notFound.back')}
