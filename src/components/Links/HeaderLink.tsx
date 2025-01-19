@@ -12,7 +12,7 @@ const HeaderLink = ({ children, href, external = false, className }: { children:
 	}
 
 	return (
-		<a className={`text-white cursor-pointer transition-all duration-100 ease-in-out hover:text-secondary font-primary text-md ${className}`}
+		<a className={`text-black dark:text-white cursor-pointer transition-all duration-100 ease-in-out hover:text-primary dark:hover:text-primary-dark font-primary text-md ${className}`}
 			onClick={handleClick}
 		>
 			{children}
