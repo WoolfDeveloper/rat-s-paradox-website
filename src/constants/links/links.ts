@@ -29,5 +29,11 @@ export const headerLinks: ILink[] = [
         path: '/contact',
         enabled: true,
         external: false,
+    },
+    {
+        name: 'notFound',
+        path: '/404',
+        enabled: true,
+        external: false,
     }
 ]

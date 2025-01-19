@@ -4,7 +4,8 @@
         "home": "Home",
         "about": "About Us",
         "games": "Games",
-        "contact": "Contact"
+        "contact": "Contact",
+        "notFound": "404"
     },
     "about": {
         "title": "About Us"

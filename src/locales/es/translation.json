@@ -4,7 +4,8 @@
         "home": "Inicio",
         "about": "Acerca del estudio",
         "games": "Juegos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "notFound": "404"
     },
     "about": {
         "title": "Acerca del estudio"
